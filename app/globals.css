@@ -1,0 +1,49 @@
+@import "tailwindcss";
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+@layer base {
+  body {
+    font-family: 'Questrial', sans-serif;
+  }
+}
+
+:root {
+  --_gradient-blend-mode: normal;
+  --_gradient-blur: 0px;
+}
+
+.bg {
+  background: radial-gradient(at 11% 3%, #DAE7F0 0px, transparent 50%),
+    radial-gradient(at 92% 34%, #C4E7FF 0px, transparent 50%),
+    radial-gradient(at 94% 80%, #B1DAFC 0px, transparent 50%),
+    radial-gradient(at 12% 63%, #9DD1FC 0px, transparent 50%),
+    radial-gradient(at 25% 10%, #3D9BBA 0px, transparent 50%) #FCFCFC;
+  mix-blend-mode: var(--_gradient-blend-mode);
+
+  min-height: 100vh;
+}
+
+.frosted-backdrop {
+  background: rgba(255, 255, 255, 0.40);
+  /* fondo translúcido */
+  backdrop-filter: blur(var(--_gradient-blur)) contrast(100%) brightness(100%);
+  -webkit-backdrop-filter: blur(var(--_gradient-blur)) contrast(100%) brightness(100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: #333;
+}
+
+.frosted-backdrop-inside {
+  background: rgba(255, 255, 255, 0.36);
+  /* fondo translúcido */
+  backdrop-filter: blur(var(--_gradient-blur)) contrast(100%) brightness(100%);
+  -webkit-backdrop-filter: blur(var(--_gradient-blur)) contrast(100%) brightness(100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: #333;
+}

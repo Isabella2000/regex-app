@@ -49,6 +49,7 @@ export default function Home() {
         errs.push(`Línea ${lineNumber}: formato inválido (se esperaban 4 campos separados por ';').`);
         return;
       }
+      // eslint-disable-next-line prefer-const
       let [fecha, statuscode, descripcion, iporigen] = parts.map(p => p.trim());
 
       // Validaciones
@@ -78,6 +79,7 @@ export default function Home() {
   }, []);
 
 
+  console.log('formatErrors', formatErrors)
   const filtered = useMemo(() => {
     return rows.filter((r) => {
       if (filters.statuscode && !r.statuscode.includes(filters.statuscode)) return false;
@@ -158,8 +160,7 @@ export default function Home() {
             {filtered.length === 0 ? (
               <div className="mt-3 text-slate-600">Sin resultados…</div>
             ) : (
-              // Este div fuerza el scroll
-              <div className="mt-4 flex-1 overflow-y-auto pr-1">
+              <div className="mt-4 h-[65%] overflow-y-auto pr-1">
                 <ul className="grid grid-cols-2 gap-2">
                   {filtered.map((r) => (
                     <li
